@@ -345,6 +345,30 @@ body {
   fill: #5865F2;
 }
 
+.card-leading.tiktok-accent {
+  background: #ffffff;
+  color: #010101;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-leading.tiktok-accent svg {
+  width: 26px;
+  height: 26px;
+  fill: #010101;
+}
+
+.card-leading.roblox-accent {
+  background: #ffffff;
+  color: #E2231A;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-leading.roblox-accent svg {
+  width: 26px;
+  height: 26px;
+  fill: #E2231A;
+}
+
 .link-card:hover .card-leading {
   transform: scale(1.06);
 }
