@@ -125,11 +125,11 @@ body {
 }
 
 .nav-btn {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.18);
+  border: 2px solid #eb3ec0;
+  background: #361a56;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   display: flex;
@@ -137,18 +137,29 @@ body {
   justify-content: center;
   color: #ffffff;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-  transition: all var(--transition-fast);
+  box-shadow:
+    0 0 14px rgba(235, 62, 192, 0.65),
+    0 0 28px rgba(215, 45, 180, 0.35),
+    0 6px 16px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  transition: all var(--transition-smooth);
 }
 
 .nav-btn:hover {
-  background: rgba(255, 255, 255, 0.35);
-  transform: scale(1.06);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  background: #44216c;
+  border-color: #f755d2;
+  transform: scale(1.08);
+  box-shadow:
+    0 0 20px rgba(247, 85, 210, 0.85),
+    0 0 40px rgba(235, 62, 192, 0.55),
+    0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .nav-btn:active {
   transform: scale(0.94);
+  box-shadow:
+    0 0 10px rgba(235, 62, 192, 0.5),
+    0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .nav-btn svg {
@@ -157,6 +168,11 @@ body {
   stroke: currentColor;
   stroke-width: 2;
   fill: none;
+}
+
+.nav-btn svg[fill="currentColor"] {
+  stroke: none;
+  fill: currentColor;
 }
 
 /* ==========================================================================
@@ -186,13 +202,22 @@ body {
   object-fit: cover;
   object-position: center 30%;
   background-color: #ffffff;
-  border: 3.5px solid rgba(255, 255, 255, 0.95);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 6px rgba(192, 132, 252, 0.45);
-  transition: transform var(--transition-smooth);
+  border: 3px solid #f3e8ff;
+  box-shadow:
+    0 0 0 2px #7e22ce,
+    0 0 0 4.5px #a855f7,
+    0 0 16px rgba(168, 85, 247, 0.8),
+    0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
 .avatar-container:hover .avatar-img {
   transform: scale(1.04) rotate(2deg);
+  box-shadow:
+    0 0 0 2px #9333ea,
+    0 0 0 5px #c084fc,
+    0 0 22px rgba(192, 132, 252, 0.95),
+    0 10px 28px rgba(0, 0, 0, 0.55);
 }
 
 /* Verified / Community Badge */
@@ -204,11 +229,12 @@ body {
   height: 28px;
   background: #3b82f6;
   border-radius: 50%;
-  border: 2.5px solid #ffffff;
+  border: 2px solid #e9d5ff;
+  box-shadow: 0 0 0 1.5px #7e22ce, 0 2px 8px rgba(0, 0, 0, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 2;
 }
 
 .verified-badge svg {
@@ -280,97 +306,89 @@ body {
    The 4 Buttons Section
    ========================================================================== */
 .buttons-stack {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
   width: 100%;
   margin-bottom: 36px;
 }
 
-/* Button Card Base */
+/* Button Card Base - Matching Reference Screenshot */
 .link-card {
   position: relative;
   display: flex;
   align-items: center;
   width: 100%;
-  min-height: 72px;
-  padding: 12px 16px;
-  border-radius: var(--radius-card);
+  min-height: 76px;
+  padding: 12px 18px;
+  border-radius: 22px;
   text-decoration: none;
-  background: #9D4CCC;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  box-shadow: 0 8px 24px rgba(157, 76, 204, 0.38), 0 2px 6px rgba(0, 0, 0, 0.2);
+  background: #361a56;
+  border: 2px solid #eb3ec0;
+  box-shadow:
+    0 0 16px rgba(235, 62, 192, 0.65),
+    0 0 32px rgba(215, 45, 180, 0.35),
+    0 8px 24px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
   transition: all var(--transition-smooth);
   cursor: pointer;
   overflow: hidden;
 }
 
 .link-card:hover {
-  background: #aa5ada;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(157, 76, 204, 0.52);
-  border-color: rgba(255, 255, 255, 0.45);
+  background: #422068;
+  transform: translateY(-2px);
+  border-color: #f755d2;
+  box-shadow:
+    0 0 22px rgba(247, 85, 210, 0.85),
+    0 0 45px rgba(235, 62, 192, 0.5),
+    0 12px 28px rgba(0, 0, 0, 0.6),
+    inset 0 1px 2px rgba(255, 255, 255, 0.25);
 }
 
 .link-card:active {
   transform: scale(0.985);
-  box-shadow: 0 4px 14px rgba(157, 76, 204, 0.3);
+  box-shadow:
+    0 0 12px rgba(235, 62, 192, 0.5),
+    0 4px 14px rgba(0, 0, 0, 0.4);
 }
 
-/* Card Left Thumbnail / Icon */
+/* Card Left Thumbnail / Icon Container */
 .card-leading {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-right: 14px;
-  background: #ffffff;
+  margin-right: 15px;
+  background: #110522;
+  border: 1px solid rgba(235, 62, 192, 0.25);
+  overflow: hidden;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
   transition: transform var(--transition-fast);
 }
 
-.card-leading.discord-accent {
-  background: #ffffff;
-  color: #5865F2;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.card-leading .card-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
 }
 
-.card-leading.discord-accent svg {
-  width: 26px;
-  height: 26px;
-  fill: #5865F2;
-}
-
-.card-leading.tiktok-accent {
-  background: #ffffff;
-  color: #010101;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.card-leading.tiktok-accent svg {
-  width: 26px;
-  height: 26px;
-  fill: #010101;
-}
-
+.card-leading.discord-accent,
+.card-leading.tiktok-accent,
 .card-leading.roblox-accent {
-  background: #ffffff;
-  color: #E2231A;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.card-leading.roblox-accent svg {
-  width: 26px;
-  height: 26px;
-  fill: #E2231A;
+  background: #110522;
+  border: 1px solid rgba(235, 62, 192, 0.3);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 .link-card:hover .card-leading {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 /* Card Center Content */
@@ -384,27 +402,30 @@ body {
 }
 
 .card-title {
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 1.06rem;
+  font-weight: 800;
   color: #ffffff;
   line-height: 1.35;
+  letter-spacing: -0.01em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   display: flex;
   align-items: center;
   gap: 6px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .card-subtitle {
-  font-size: 0.84rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #94a3b8;
   line-height: 1.35;
-  margin-top: 2px;
+  margin-top: 3px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  letter-spacing: 0.01em;
 }
 
 /* Card Right Options / Three Dots */
@@ -505,16 +526,17 @@ body {
    ========================================================================== */
 .copyright-footer {
   text-align: center;
-  padding: 18px 0 8px;
-  margin-top: 4px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 10px 0 2px;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .copyright-footer span {
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.04em;
+  font-size: 0.68rem;
+  font-weight: 300;
+  color: #64748b;
+  letter-spacing: 0.06em;
+  opacity: 0.7;
 }
 
 /* ==========================================================================
